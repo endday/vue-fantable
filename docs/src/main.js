@@ -31,7 +31,7 @@ import {
 } from 'vue-fantable/packages/index.js'
 // } from 'vue-fantable/libs/main.js'
 
-const app = createApp(APP)
+const app = isVue2 ? Vue2(APP) : createApp(APP)
 app.use(Router)
 app.component('DemoBlock', DemoBlock)
 app.component('VueAnchor', Anchor)

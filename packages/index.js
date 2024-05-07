@@ -1,5 +1,5 @@
 // this file provide for vue createApp to use fan-table
-
+import { isVue2 } from 'vue-demi'
 import VeCheckbox from './ve-checkbox/ve-checkbox.js'
 import VeCheckboxGroup from './ve-checkbox-group/ve-checkbox-group.js'
 import VeContextmenu from './ve-contextmenu/ve-contextmenu.js'
@@ -28,14 +28,18 @@ const components = {
   Table: FanTable
 }
 
-function install (app) {
+function install(Vue) {
   Object.entries(components).forEach(([key, value]) => {
-    app.component('Ve' + key, value)
-    app.component('Fan' + key, value)
+    Vue.component('Ve' + key, value)
+    Vue.component('Fan' + key, value)
   })
-
-  app.config.globalProperties.$veLoading = VeLoading
-  app.config.globalProperties.$veLocale = VeLocale
+  if (isVue2) {
+    Vue.prototype.$veLoading = VeLoading
+    Vue.prototype.$veLocale = VeLocale
+  } else {
+    Vue.config.globalProperties.$veLoading = VeLoading
+    Vue.config.globalProperties.$veLocale = VeLocale
+  }
 }
 
 export {
