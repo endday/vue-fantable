@@ -1764,7 +1764,7 @@ export default {
          */
     columnToVisible(nextColumn) {
       const { hasXScrollBar, colgroups } = this
-      if (!nextColumn || nextColumn) return
+      // if (!nextColumn || nextColumn) return
       if (!hasXScrollBar) {
         return false
       }
