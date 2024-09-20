@@ -8,13 +8,14 @@
     // Removing this would place the .d.ts files
     // next to the .js files
     "moduleResolution": "node",
+    "skipLibCheck": true,
     // Tells TypeScript to read JS files, as
     // normally they are ignored as source files
     "allowJs": true,
     "jsx": "preserve",
     "jsxImportSource": "vue",
     // Generate d.ts files
-    "declaration": true,
+    "declaration": false,
     "emitDeclarationOnly": true,
     "declarationMap": false,
     "isolatedModules": true,

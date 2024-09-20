@@ -641,7 +641,7 @@ export default {
         stripe = rowStyleOption.stripe
       }
       const clsStripe = clsName('stripe')
-      const rowHover = clsName('stripe')
+      const rowHover = clsName('row-hover')
       result = {
         [clsStripe]: stripe === true, // 默认不开启
         [rowHover]: hoverHighlight !== false, // 默认开启
@@ -1764,7 +1764,7 @@ export default {
          */
     columnToVisible(nextColumn) {
       const { hasXScrollBar, colgroups } = this
-      if (!nextColumn || nextColumn) return
+      // if (!nextColumn || nextColumn) return
       if (!hasXScrollBar) {
         return false
       }

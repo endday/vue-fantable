@@ -120,15 +120,14 @@ export function getParentCompByName(context, name) {
   return null
 }
 
-/*
- * @getChildCompsByName
+/**
  * @desc  get child comps by name
  * @param {object} context
  * @param {string} name - child comp name
  */
 export function getChildCompsByName(context, name) {
   const result = []
-
+  // @deprecated https://v3-migration.vuejs.org/breaking-changes/children.html
   let childrens = context.$children
 
   while (childrens && childrens.length > 0) {

@@ -1,13 +1,12 @@
-> 已经基本完成[文档](https://fall-zhang.github.io/vue-fantable/#/zh/doc/intro)的开发
-> vue-fantable 开发已经初步完成，如果遇到了任何组件和文档有关问题，可以提交 [issue](https://github.com/fall-zhang/vue-fantable/issues)
+> 遇到任何组件和文档有关问题，请提交 [issue](https://github.com/fall-zhang/vue-fantable/issues)
+>
+> 如果我看的更远，那是因为我站在巨人的肩膀上。
 
 # vue-fantable
 
 [![license](https://img.shields.io/npm/l/vue-fantable.svg)](http://www.opensource.org/licenses/mit-license.php)
 
 [English](./README-EN.md) | **中文**
-
-> 如果我看的更远，那是因为我站在巨人的肩膀上。
 
 ## 介绍
 
@@ -22,7 +21,7 @@
 
 ## API & 文档
 
-> 文档正在逐步完善，大家可以参照 [vue-easytable](https://happy-coding-clans.github.io/vue-easytable/#/zh/doc/intro) 的文档。组件使用方式和原组件一致。
+> 组件使用方式和 vue-easytable 尽可能保持一致。
 
 - [vue-fantable 文档](https://fall-zhang.github.io/vue-fantable/#/zh/doc/intro)
 - [CHANGE_LOG](./CHANGE-LOG.md)
@@ -312,24 +311,23 @@ export default {
 </style>
 ```
 
-## 功能支持
+## 更多功能支持
 
 **其它基础组件**
 
-- [Loading 组件加载状态]()
-- [Pagination 分页组件]()
-- [Contextmenu 右键菜单组件]()
-- [Icon 图标组件]()
-- [Locale 国际化组件]()
+- [Loading 组件加载状态](https://fall-zhang.github.io/vue-fantable/#/zh/doc/base/loading)
+- [Pagination 分页组件](https://fall-zhang.github.io/vue-fantable/#/zh/doc/base/pagination)
+- [Contextmenu 右键菜单组件](https://fall-zhang.github.io/vue-fantable/#/zh/doc/base/contextmenu)
+- [Icon 图标组件](https://fall-zhang.github.io/vue-fantable/#/zh/doc/base/icon)
+- [Locale 国际化组件](https://fall-zhang.github.io/vue-fantable/#/zh/doc/base/locale)
 
 **Table 组件**
 
-- [轻量]()
-- [国际化]()
-- [主题定制 & 内置主题]()
-- [虚拟滚动]()
-- [自定义事件]()
-- [更多](##更多功能支持)
+- [国际化](https://fall-zhang.github.io/vue-fantable/#/zh/doc/locale)
+- [主题定制 & 内置主题](https://fall-zhang.github.io/vue-fantable/#/zh/doc/theme)
+- [虚拟滚动](https://fall-zhang.github.io/vue-fantable/#/zh/doc/table/virtual-scroll)
+- [自定义事件](https://fall-zhang.github.io/vue-fantable/#/zh/doc/table/event-custom)
+- [更多用法](https://fall-zhang.github.io/vue-fantable/#/zh/doc/table/usage)
 
 如果没有你想要的的功能，请告诉[我](https://github.com/fall-zhang/vue-fantable/issues)
 
@@ -350,37 +348,6 @@ export default {
 - 点击 :star: 让更多的人了解到我们
 - 如果你希望参与贡献，欢迎 Pull Request
 
-## 讨论组
-
-- [加入 gitter 讨论](https://github.com/fall-zhang/vue-fantable/issues)
-
 ## License
 
 http://www.opensource.org/licenses/mit-license.php
-
-## 更多功能支持
-
-- [国际化]()
-- [主题定制 & 内置主题]()
-- [虚拟滚动]()
-- [自定义事件]()
-- [列隐藏]()
-- [表头固定]()
-- [表头分组]()
-- [筛选]()
-- [排序]()
-- [列宽拖动]()
-- [单元格样式]()
-- [单元格自定义]()
-- [单元格合并]()
-- [单元格选择（键盘操作）]()
-- [单元格自动填充]()
-- [单元格编辑]()
-- [剪贴板]()
-- [右键菜单]()
-- [单元格省略]()
-- [行单选]()
-- [行多选]()
-- [行展开]()
-- [行样式]()
-- [footer 汇总]()

@@ -207,11 +207,7 @@ export function getTotalWidthByColKeys({ colKeys, colgroups }) {
  * @initGroupColumns
  * @desc  int group columns
  * @param {array} cloneColumns - clone columns
- * @return {}
-   isGroupHeader,
-   colgroups,
-   groupColumns
-}
+ * @return {isGroupHeader, colgroups, groupColumns}
  */
 export function initGroupColumns(cloneColumns) {
   const colgroups = []

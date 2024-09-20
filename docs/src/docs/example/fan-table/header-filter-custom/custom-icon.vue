@@ -1,5 +1,5 @@
 <template>
-    <fan-table :max-height="300" :fixed-header="true" :columns="columns" :table-data="tableData" />
+  <fan-table :max-height="300" :fixed-header="true" :columns="columns" :table-data="tableData" />
 </template>
 
 <script lang="jsx">
@@ -10,21 +10,21 @@ const filterCustom = {
       <div class="custom-name-filter">
         <input
           value={this.searchValue}
-          on-input={(e) => (this.searchValue = e.target.value)}
+          onInput={(e) => (this.searchValue = e.target.value)}
           placeholder="Search name"
         />
         <div class="custom-name-filter-operation">
           <span
             class="name-filter-cancel"
-            on-click={() => this.searchCancel(closeFn)}
+            onClick={() => this.searchCancel(closeFn)}
           >
-                        取消
+            取消
           </span>
           <span
             class="name-filter-confirm"
-            on-click={() => this.searchConfirm(closeFn)}
+            onClick={() => this.searchConfirm(closeFn)}
           >
-                        查询
+            查询
           </span>
         </div>
       </div>
@@ -124,7 +124,7 @@ export default {
       this.tableData = this.sourceData.filter(
         (x) =>
           !searchValue.length ||
-                    x.name.toLowerCase().includes(searchValue.toLowerCase()),
+          x.name.toLowerCase().includes(searchValue.toLowerCase()),
       )
     },
 
@@ -144,27 +144,27 @@ export default {
 
 <style lang="less">
 .custom-name-filter {
-    padding: 10px;
+  padding: 10px;
 
-    .custom-name-filter-operation {
-        cursor: pointer;
+  .custom-name-filter-operation {
+    cursor: pointer;
 
-        margin: 10px 10px 0px 0;
+    margin: 10px 10px 0px 0;
 
-        .name-filter-cancel,
-        .name-filter-confirm {
-            &:hover {
-                color: #1890ff;
-            }
-        }
-
-        .name-filter-cancel {
-            float: left;
-        }
-
-        .name-filter-confirm {
-            float: right;
-        }
+    .name-filter-cancel,
+    .name-filter-confirm {
+      &:hover {
+        color: #1890ff;
+      }
     }
+
+    .name-filter-cancel {
+      float: left;
+    }
+
+    .name-filter-confirm {
+      float: right;
+    }
+  }
 }
 </style>

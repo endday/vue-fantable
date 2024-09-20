@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import cloneDeep from '@/utils/cloneDeep'
 export default {
   name: 'ApiTpl',
   props: {
@@ -43,11 +44,20 @@ export default {
         enable: false,
       },
       cloneTable: [],
+      cloneColumns: [],
+      bColumn: [{ key: 'a', field: 'param', title: '参数', width: '10%', align: 'left', type: 'expand' }, { key: 'b', field: 'desc', title: '说明', width: '60%', align: 'left' }, { key: 'c', field: 'type', title: '类型', width: '10%', align: 'left' }, { key: 'd', field: 'optionalVal', title: '可选值', width: '10%', align: 'left' }, { key: 'e', field: 'default', title: '默认值', width: '10%', align: 'left' }],
+      bData: [
+        {
+          name: 'John',
+          date: '1900-05-20',
+          hobby: 'coding and coding repeat',
+          address: 'No.1 Century Avenue, Shanghai',
+        },
+      ],
     }
   },
   computed: {
     getAnchor() {
-      // return ''
       return this.anchor ? this.anchor : this.desc
     },
   },
@@ -55,18 +65,20 @@ export default {
     // auto create row key
     tableData: {
       handler(val) {
-        if (val) {
-          this.cloneTable = val.map((item, index) => ({
-            ...item,
-            __key__: index
-          }))
-        }
-        // console.log(this.cloneTable, this.columns);
-        //
-        setTimeout(() => {
-          console.log(this.cloneTable, this.columns)
-          this.$forceUpdate()
-        }, 2000)
+        this.cloneTable = cloneDeep(val)
+        this.cloneColumns = cloneDeep(this.columns)
+        // console.log(this.bColumn);
+        // console.log(this.cloneColumns);
+        // if (val) {
+        //   this.cloneTable = val.map((item, index) => ({
+        //     ...item,
+        //     __key__: index
+        //   }))
+        // }
+        // console.log("5246464", this.cloneTable, this.columns)
+        // setTimeout(() => {
+        //   console.log(this.cloneTable, this.columns)
+        // }, 2000)
       },
       immediate: true,
     },

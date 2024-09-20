@@ -8,7 +8,13 @@ Vx.x.x(TPL)
 - Documents
 - Dependencies Changes
 
-### V0.2.2
+### V0.2.5
+
+#### Feature
+
+- 修复选中时，合并的单元格选中不完整的情况
+
+### V0.2.3
 
 #### Feature
 

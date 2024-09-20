@@ -9,9 +9,9 @@
       <div class="main-banner-menus-container">
         <div class="main-banner-menus">
           <span v-for="item in currentLocal.menus" :key="item.name" :class="[
-      'main-banner-menu-item',
-      activeMenuClass(item),
-    ]">
+            'main-banner-menu-item',
+            activeMenuClass(item),
+          ]">
             <a class="main-banner-menu-link" href="javascript:void(0)" @click="gotoRouter(item)">
               {{ item.name }}
             </a>
@@ -19,22 +19,20 @@
 
           <!-- switch lang -->
           <span class="main-banner-menu-item">
-            <div v-click-outside="() => (showLangDropdown = false)
-      " class="switch-lang-container">
-              <span class="switch-lang" @click="
-      showLangDropdown = !showLangDropdown
-      ">
+            <div v-click-outside="() => (showLangDropdown = false)" class="switch-lang-container">
+              <span class="switch-lang" @click="showLangDropdown = !showLangDropdown">
                 <i class="icon iconfont icon-translate" />
+                lang
                 <i class="icon iconfont icon-dropdown" />
               </span>
               <div class="switch-lang-dropdown-pannel" :class="showLangDropdown
-      ? 'dropdown-pannel-show'
-      : ''
-      ">
+                ? 'dropdown-pannel-show'
+                : ''
+                ">
                 <span v-for="item in switchLangOptions" :key="item.value" :class="{
-      'dropdown-item': true,
-      active: item.value === currentDocLang,
-    }" @click.stop="onChangeLang(item)">
+                  'dropdown-item': true,
+                  active: item.value === currentDocLang,
+                }" @click.stop="onChangeLang(item)">
                   {{ item.label }}
                 </span>
               </div>
@@ -44,18 +42,16 @@
           <!-- switch theme -->
           <span class="main-banner-menu-item">
             <div v-click-outside="() => (showThemeDropdown = false)
-      " class="switch-theme-container">
-              <span class="switch-theme" @click="
-      showThemeDropdown = !showThemeDropdown
-      ">
+              " class="switch-theme-container">
+              <span class="switch-theme" @click="showThemeDropdown = !showThemeDropdown">
                 {{ currentLocal.docTheme }}
                 <i class="icon iconfont icon-dropdown" />
               </span>
               <div class="switch-theme-dropdown-pannel" :class="{ 'dropdown-pannel-show': showThemeDropdown }">
                 <span v-for="item in currentLocal.switchDocThemeOptions" :key="item.value" :class="{
-      'dropdown-item': true,
-      active: item.value === currentDocTheme,
-    }" @click.stop="onThemeChange(item)">
+                  'dropdown-item': true,
+                  active: item.value === currentDocTheme,
+                }" @click.stop="onThemeChange(item)">
                   {{ item.label }}
                 </span>
               </div>
@@ -64,23 +60,22 @@
 
           <!-- switch version -->
           <span class="main-banner-menu-item">
-            <div v-click-outside="() => (showVersionDropdown = false)
-      " class="switch-version-container">
+            <div v-click-outside="() => (showVersionDropdown = false)" class="switch-version-container">
               <span class="switch-version" @click="
-      showVersionDropdown =
-      !showVersionDropdown
-      ">
+                showVersionDropdown =
+                !showVersionDropdown
+                ">
                 {{ currentDocVersion }}
                 <i class="icon iconfont icon-dropdown"></i>
               </span>
               <div class="switch-version-dropdown-pannel" :class="{
-      'dropdown-pannel-show': showVersionDropdown
-    }
-      ">
+                'dropdown-pannel-show': showVersionDropdown
+              }
+                ">
                 <span v-for="item in switchVersionOptions" :key="item.value" :class="{
-      'dropdown-item': true,
-      active: item.label === currentDocVersion,
-    }" @click.stop="versionChange(item)">
+                  'dropdown-item': true,
+                  active: item.label === currentDocVersion,
+                }" @click.stop="versionChange(item)">
                   {{ item.label }}
                 </span>
               </div>
@@ -311,9 +306,9 @@ export default {
       margin: 0 auto;
 
       .main-banner-menus {
-        display: block;
-        float: right;
+        display: flex;
         font-weight: normal;
+        justify-content: flex-end;
         font-size: 14px;
 
         .main-banner-menu-item {
@@ -385,6 +380,7 @@ export default {
           .switch-lang,
           .switch-theme,
           .switch-version {
+            line-height: 60px;
             color: #666;
             cursor: pointer;
 

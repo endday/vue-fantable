@@ -1056,10 +1056,7 @@ export default {
 
         borders.leftBorder.top = autoFillEndCellRect.top
         borders.leftBorder.left = areaPostions.leftBorder.left
-      } else if (
-        rightmostColKey === autoFillEndCell.colKey &&
-                !isEmptyValue(rightmostColKey)
-      ) {
+      } else if (rightmostColKey === autoFillEndCell.colKey && !isEmptyValue(rightmostColKey)) {
         // auto fill end cell right
         autofillingDirection = AUTOFILLING_DIRECTION.RIGHT
 
@@ -1087,10 +1084,7 @@ export default {
 
         borders.bottomBorder.top = areaPostions.bottomBorder.top
         borders.bottomBorder.left = areaPostions.rightBorder.left - 1
-      } else if (
-        leftmostColKey === autoFillEndCell.colKey &&
-                !isEmptyValue(leftmostColKey)
-      ) {
+      } else if (leftmostColKey === autoFillEndCell.colKey && !isEmptyValue(leftmostColKey)) {
         // auto fill end cell left
         autofillingDirection = AUTOFILLING_DIRECTION.LEFT
 
@@ -1102,8 +1096,7 @@ export default {
 
         borders.rightBorder.show = false
 
-        borders.borderWidth =
-                    areaPostions.leftBorder.left - autoFillEndCellRect.left + 1
+        borders.borderWidth = areaPostions.leftBorder.left - autoFillEndCellRect.left + 1
         borders.borderHeight = areaPostions.borderHeight
 
         borders.topBorder.top = areaPostions.topBorder.top
@@ -1218,6 +1211,7 @@ export default {
           colKeys: fixedColKeys,
           colgroups,
         })
+        console.log('🚀 ~ fixedColsTotalWidth:', fixedColsTotalWidth)
       }
 
       if (fixedType) {
@@ -1297,14 +1291,14 @@ export default {
           )
         },
       }
-
+      const calcBorderWidth = rightBorder.left - leftBorder.left + 2
       return (
         <div class={clsName(className)}>
           {/* top */}
           <div
             style={{
               display: topBorder.show ? 'block' : 'none',
-              width: borderWidth + 'px',
+              width: calcBorderWidth + 'px',
               height: topBorder.height + 'px',
               top: topBorder.top + 'px',
               left: topBorder.left + 'px',
@@ -1326,7 +1320,7 @@ export default {
           <div
             style={{
               display: bottomBorder.show ? 'block' : 'none',
-              width: borderWidth + 'px',
+              width: calcBorderWidth + 'px',
               height: bottomBorder.height + 'px',
               top: bottomBorder.top + 'px',
               left: bottomBorder.left + 'px',
