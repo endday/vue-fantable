@@ -2,7 +2,7 @@
   // Change this to match your project
   "extends": "./tsconfig.base.json",
   "include": [
-    "libs/main.js",
+    "packages/index.js",
     "libs/lang/*",
     "libs/*.css",
   ],
